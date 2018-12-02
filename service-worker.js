@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/spherebot-controller/precache-manifest.632089b33df3c72455448d71aa6f16ed.js"
+  "/spherebot-controller/precache-manifest.1d91f284b379bf6002599ec39d3d744e.js"
 );
 
 workbox.clientsClaim();
