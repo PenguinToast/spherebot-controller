@@ -4,8 +4,8 @@ self.__precacheManifest = [
     "url": "/spherebot-controller/static/media/icons-16.f22a4ccb.woff"
   },
   {
-    "revision": "b346fa87aebe4028fdc9",
-    "url": "/spherebot-controller/static/css/main.a9b3c12b.chunk.css"
+    "revision": "6be510ff1fba95f70fd9",
+    "url": "/spherebot-controller/static/css/main.8c7b8e53.chunk.css"
   },
   {
     "revision": "b2eb84410450d6a35e6e02c4d1f6639e",
@@ -24,8 +24,8 @@ self.__precacheManifest = [
     "url": "/spherebot-controller/static/media/icons-16.6826f355.eot"
   },
   {
-    "revision": "b346fa87aebe4028fdc9",
-    "url": "/spherebot-controller/static/js/main.b346fa87.chunk.js"
+    "revision": "6be510ff1fba95f70fd9",
+    "url": "/spherebot-controller/static/js/main.6be510ff.chunk.js"
   },
   {
     "revision": "989d9c9ad5bf6e10446cd54ba5cbe092",
@@ -44,7 +44,7 @@ self.__precacheManifest = [
     "url": "/spherebot-controller/static/css/1.111b6fc3.chunk.css"
   },
   {
-    "revision": "18ceda6bd2b15f96bbf8c7dc19769813",
+    "revision": "e45559d8e3786acba009d445cc28caab",
     "url": "/spherebot-controller/index.html"
   }
 ];
