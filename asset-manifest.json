@@ -1,16 +1,16 @@
 {
-  "main.css": "/spherebot-controller/static/css/main.b0dd2ae3.chunk.css",
-  "main.js": "/spherebot-controller/static/js/main.89a86de0.chunk.js",
-  "main.js.map": "/spherebot-controller/static/js/main.89a86de0.chunk.js.map",
+  "main.css": "/spherebot-controller/static/css/main.c9184579.chunk.css",
+  "main.js": "/spherebot-controller/static/js/main.ba980c46.chunk.js",
+  "main.js.map": "/spherebot-controller/static/js/main.ba980c46.chunk.js.map",
   "static/css/1.7bfbb656.chunk.css": "/spherebot-controller/static/css/1.7bfbb656.chunk.css",
   "static/js/1.14abb08d.chunk.js": "/spherebot-controller/static/js/1.14abb08d.chunk.js",
   "static/js/1.14abb08d.chunk.js.map": "/spherebot-controller/static/js/1.14abb08d.chunk.js.map",
   "runtime~main.js": "/spherebot-controller/static/js/runtime~main.72093ebf.js",
   "runtime~main.js.map": "/spherebot-controller/static/js/runtime~main.72093ebf.js.map",
   "static/media/controller.css": "/spherebot-controller/static/media/icons-16.f22a4ccb.woff",
-  "static/css/main.b0dd2ae3.chunk.css.map": "/spherebot-controller/static/css/main.b0dd2ae3.chunk.css.map",
+  "static/css/main.c9184579.chunk.css.map": "/spherebot-controller/static/css/main.c9184579.chunk.css.map",
   "static/css/1.7bfbb656.chunk.css.map": "/spherebot-controller/static/css/1.7bfbb656.chunk.css.map",
   "index.html": "/spherebot-controller/index.html",
-  "precache-manifest.b81e868591b982ffe11598ea8ee90280.js": "/spherebot-controller/precache-manifest.b81e868591b982ffe11598ea8ee90280.js",
+  "precache-manifest.0aa2bd61718949570ef043b6b58c68a8.js": "/spherebot-controller/precache-manifest.0aa2bd61718949570ef043b6b58c68a8.js",
   "service-worker.js": "/spherebot-controller/service-worker.js"
 }
