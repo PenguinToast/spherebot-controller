@@ -1,0 +1,37 @@
+@import '~@blueprintjs/core/lib/css/blueprint.css'
+@import '~@blueprintjs/icons/lib/css/blueprint-icons.css'
+
+.controller {
+  flex: 1 1 auto
+
+  padding-top: 20px
+  padding-bottom: @padding-top
+  display: flex
+  align-items: stretch
+  width: 100%
+  background-color: #F5F8FA
+
+  &:fullscreen, &:-webkit-full-screen, &:-moz-full-screen {
+    background-color: #F5F8FA
+  }
+
+  .center-icon-container {
+    flex: 0.75 1 auto
+
+    display: flex
+    align-items: center
+    justify-content: center
+  }
+
+  .slider-container {
+    flex: 0.25 1 auto
+
+    display: flex
+    justify-content: center
+  }
+
+  .slider {
+    height: auto
+    width: 30px
+  }
+}
