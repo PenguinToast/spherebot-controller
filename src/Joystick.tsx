@@ -14,6 +14,8 @@ export class Joystick extends Component<IJoystickProps, {}> {
   private divRef = createRef<HTMLDivElement>();
   private canvasRef = createRef<HTMLCanvasElement>();
 
+  private currentTouch: number | null = null;
+
   private roundRect(
     ctx: CanvasRenderingContext2D,
     x: number,
@@ -76,15 +78,14 @@ export class Joystick extends Component<IJoystickProps, {}> {
     ctx.clearRect(0, 0, width, height);
     this.drawBackground(ctx, width, height);
 
+    // Draw fill
+    const y = this.valueToY(canvas, this.props.value);
+    ctx.fillStyle = "#3DCC91";
+    ctx.fillRect(1, height / 2, width - 2, y - height / 2);
+
     // Draw slider
     ctx.beginPath();
-    ctx.arc(
-      width / 2,
-      this.valueToY(canvas, this.props.value),
-      this.radius(canvas),
-      0,
-      2 * Math.PI
-    );
+    ctx.arc(width / 2, y, this.radius(canvas), 0, 2 * Math.PI);
     ctx.closePath();
     ctx.fillStyle = "#394B59";
     ctx.fill();
@@ -100,6 +101,15 @@ export class Joystick extends Component<IJoystickProps, {}> {
     };
   }
 
+  handlePress = (clientX: number, clientY: number) => {
+    const canvas = this.canvasRef.current;
+    if (!canvas) {
+      return;
+    }
+    const loc = this.windowToCanvas(canvas, clientX, clientY);
+    this.props.onChange(this.yToValue(canvas, loc.y));
+  };
+
   handleResize = () => {
     const canvas = this.canvasRef.current;
     const div = this.divRef.current;
@@ -111,12 +121,34 @@ export class Joystick extends Component<IJoystickProps, {}> {
   };
 
   handleMouseEvent = (e: MouseEvent) => {
-    const canvas = this.canvasRef.current;
-    if (!canvas) {
+    this.handlePress(e.clientX, e.clientY);
+  };
+
+  handleTouchStart = (e: TouchEvent) => {
+    const touch = e.changedTouches.item(0);
+    if (!touch) {
       return;
     }
-    const loc = this.windowToCanvas(canvas, e.clientX, e.clientY);
-    this.props.onChange(this.yToValue(canvas, loc.y));
+    this.currentTouch = touch.identifier;
+    this.handlePress(touch.clientX, touch.clientY);
+  };
+
+  handleTouchMove = (e: TouchEvent) => {
+    for (let touch of e.changedTouches) {
+      if (touch.identifier === this.currentTouch) {
+        this.handlePress(touch.clientX, touch.clientY);
+        return;
+      }
+    }
+  };
+
+  handleTouchEnd = (e: TouchEvent) => {
+    for (let touch of e.changedTouches) {
+      if (touch.identifier === this.currentTouch) {
+        this.currentTouch = null;
+        return;
+      }
+    }
   };
 
   componentDidMount() {
@@ -132,6 +164,9 @@ export class Joystick extends Component<IJoystickProps, {}> {
         window.removeEventListener("mouseup", this.handleMouseEvent);
       });
     });
+    canvas.addEventListener("touchstart", this.handleTouchStart);
+    canvas.addEventListener("touchmove", this.handleTouchMove);
+    canvas.addEventListener("touchend", this.handleTouchEnd);
     this.handleResize();
   }
 

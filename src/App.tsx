@@ -115,7 +115,6 @@ class App extends Component<{}, IAppState> {
   }
 
   renderBody() {
-    return <Controller />;
     switch (this.state.connectionState) {
       case ConnectionState.Disconnected:
         return <NonIdealState icon="offline" title="Please connect to Spherebot" />;
