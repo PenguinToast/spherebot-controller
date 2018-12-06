@@ -10,8 +10,8 @@ export interface IControllerProps {
 }
 
 enum Motor {
-  Left = 0,
-  Right = 1,
+  Left = 1,
+  Right = 0,
 }
 
 interface IControllerState {
