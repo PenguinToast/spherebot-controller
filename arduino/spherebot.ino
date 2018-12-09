@@ -61,7 +61,7 @@ void loop() {
         end = false;
       }
     }
-    if (start) {
+    if (end) {
       Serial.println("End!");
       ble.write(ZERO, 4);
       digitalWrite(MOTORS[0][0], LOW);
